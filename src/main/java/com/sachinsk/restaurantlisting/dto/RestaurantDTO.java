@@ -1,4 +1,4 @@
-package com.sachinsk.restaurant_listing.dto;
+package com.sachinsk.restaurantlisting.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

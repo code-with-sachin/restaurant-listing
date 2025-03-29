@@ -1,6 +1,6 @@
-package com.sachinsk.restaurant_listing.repository;
+package com.sachinsk.restaurantlisting.repository;
 
-import com.sachinsk.restaurant_listing.entity.Restaurant;
+import com.sachinsk.restaurantlisting.entity.Restaurant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

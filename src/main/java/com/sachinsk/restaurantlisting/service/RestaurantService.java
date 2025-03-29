@@ -1,9 +1,9 @@
-package com.sachinsk.restaurant_listing.service;
+package com.sachinsk.restaurantlisting.service;
 
-import com.sachinsk.restaurant_listing.dto.RestaurantDTO;
-import com.sachinsk.restaurant_listing.entity.Restaurant;
-import com.sachinsk.restaurant_listing.mapper.RestaurantMapper;
-import com.sachinsk.restaurant_listing.repository.RestaurantRepo;
+import com.sachinsk.restaurantlisting.dto.RestaurantDTO;
+import com.sachinsk.restaurantlisting.entity.Restaurant;
+import com.sachinsk.restaurantlisting.mapper.RestaurantMapper;
+import com.sachinsk.restaurantlisting.repository.RestaurantRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

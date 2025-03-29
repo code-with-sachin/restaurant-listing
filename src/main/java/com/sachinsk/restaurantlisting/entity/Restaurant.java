@@ -1,4 +1,4 @@
-package com.sachinsk.restaurant_listing.entity;
+package com.sachinsk.restaurantlisting.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

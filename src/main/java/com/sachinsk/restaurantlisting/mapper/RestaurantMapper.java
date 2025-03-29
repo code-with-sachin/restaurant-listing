@@ -1,7 +1,7 @@
-package com.sachinsk.restaurant_listing.mapper;
+package com.sachinsk.restaurantlisting.mapper;
 
-import com.sachinsk.restaurant_listing.dto.RestaurantDTO;
-import com.sachinsk.restaurant_listing.entity.Restaurant;
+import com.sachinsk.restaurantlisting.dto.RestaurantDTO;
+import com.sachinsk.restaurantlisting.entity.Restaurant;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
