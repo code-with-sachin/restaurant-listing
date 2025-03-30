@@ -12,41 +12,11 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class RestaurantService {
+public interface RestaurantService {
 
-    @Autowired
-    RestaurantRepo restaurantRepo;
+    public List<RestaurantDTO> findAllRestaurants();
 
-    public List<RestaurantDTO> findAllRestaurants() {
-        List<Restaurant> restaurants = restaurantRepo.findAll();
+    RestaurantDTO addRestaurantInDB(RestaurantDTO restaurantDTO);
 
-        //map the entities fetched above to the List of DTOs
-        List<RestaurantDTO> restaurantDTOList = restaurants.stream()
-                .map(restaurant -> RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(restaurant))
-                .collect(Collectors.toList());
-
-        return restaurantDTOList;
-    }
-
-    public RestaurantDTO addRestaurantInDB(RestaurantDTO restaurantDTO) {
-        //mapping to entity since we can't save DTO to DB
-        Restaurant savedRestaurant = restaurantRepo.save(RestaurantMapper.INSTANCE.mapRestaurantDTOToRestaurant(restaurantDTO));
-
-        //mapping entity back to DTO since we are returning DTO
-        return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(savedRestaurant);
-    }
-
-    public RestaurantDTO getRestaurantById(Integer id) {
-        //Restaurant restaurantFound = restaurantRepo.findById(id).orElse(null);
-        //return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(restaurantFound);
-
-        //Another way to implement above logic
-
-        Optional<Restaurant> restaurantFound = restaurantRepo.findById(id);
-        if (restaurantFound.isPresent()) {
-            return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(restaurantFound.get());
-        } else {
-            return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(null);
-        }
-    }
+    public RestaurantDTO getRestaurantById(Integer id);
 }
