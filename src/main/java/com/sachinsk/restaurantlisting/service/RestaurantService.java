@@ -34,4 +34,9 @@ public class RestaurantService {
         //mapping entity back to DTO since we are returning DTO
         return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(savedRestaurant);
     }
+
+    public RestaurantDTO getRestaurantById(Integer id) {
+       Restaurant restaurantFound = restaurantRepo.findById(id).orElse(null);
+       return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(restaurantFound);
+    }
 }
