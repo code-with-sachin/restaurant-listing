@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,7 +37,16 @@ public class RestaurantService {
     }
 
     public RestaurantDTO getRestaurantById(Integer id) {
-       Restaurant restaurantFound = restaurantRepo.findById(id).orElse(null);
-       return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(restaurantFound);
+        //Restaurant restaurantFound = restaurantRepo.findById(id).orElse(null);
+        //return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(restaurantFound);
+
+        //Another way to implement above logic
+
+        Optional<Restaurant> restaurantFound = restaurantRepo.findById(id);
+        if (restaurantFound.isPresent()) {
+            return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(restaurantFound.get());
+        } else {
+            return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(null);
+        }
     }
 }
