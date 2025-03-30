@@ -3,8 +3,10 @@ package com.sachinsk.restaurantlisting.mapper;
 import com.sachinsk.restaurantlisting.dto.RestaurantDTO;
 import com.sachinsk.restaurantlisting.entity.Restaurant;
 import org.mapstruct.Mapper;
+import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.mapstruct.factory.Mappers;
 
+//@Mapper(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 @Mapper
 public interface RestaurantMapper {
 
