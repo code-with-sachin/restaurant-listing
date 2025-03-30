@@ -26,21 +26,12 @@ public class RestaurantService {
 
         return restaurantDTOList;
     }
-//    public List<Restaurant> findAllRestaurants() {
-//        List<Restaurant> restaurants = restaurantRepo.findAll();
-//
-//        return restaurants;
-//    }
 
     public RestaurantDTO addRestaurantInDB(RestaurantDTO restaurantDTO) {
         //mapping to entity since we can't save DTO to DB
         Restaurant savedRestaurant = restaurantRepo.save(RestaurantMapper.INSTANCE.mapRestaurantDTOToRestaurant(restaurantDTO));
+
         //mapping entity back to DTO since we are returning DTO
         return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(savedRestaurant);
     }
-//    public Restaurant addRestaurantInDB(Restaurant restaurant) {
-//        Restaurant savedRestaurant = restaurantRepo.save(restaurant);
-//
-//        return savedRestaurant;
-//    }
 }
